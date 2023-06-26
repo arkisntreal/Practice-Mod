@@ -3,9 +3,9 @@
 	"id": "practice_mod",
 	"version": "${version}",
 	"name": "Practice_Mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "I hate my life! Nothing here works for me! ENJOY MY SUFFERING YOU SICK BA-",
 	"authors": [
-		"Me!"
+		"sad hikaru"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
@@ -17,6 +17,9 @@
 	"entrypoints": {
 		"main": [
           "net.hikaru.practice_mod.PracticeMod"
+		],
+		"client":[
+			"net.hikaru.practice_mod.PracticeModClient"
 		]
 	},
 	"mixins": [

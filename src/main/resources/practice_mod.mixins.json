@@ -3,6 +3,8 @@
 	"package": "net.hikaru.practice_mod.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
+	],
+	"client":[
       "PracticeMixin"
 	],
 	"injectors": {
