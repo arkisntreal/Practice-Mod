@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "firstium_block",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "practice_mod:firstium_ingot"
+    }
+  },
+  "result": {
+    "item": "practice_mod:firstium_block"
+  }
+}

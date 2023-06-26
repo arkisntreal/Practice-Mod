@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 200,
+  "experience": 1.4,
+  "group": "firstium_ingot",
+  "ingredient": {
+    "item": "practice_mod:raw_firstium"
+  },
+  "result": "practice_mod:firstium_ingot"
+}

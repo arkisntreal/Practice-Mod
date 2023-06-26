@@ -1,0 +1,21 @@
+{
+  "item.practice_mod.raw_firstium": "Raw Firstium",
+  "item.practice_mod.firstium_ingot": "Firstium Ingot",
+  "item.practice_mod.first_core": "First Core",
+  "item.practice_mod.d_four": "D4",
+  "item.practice_mod.d_six": "D6",
+
+  "block.practice_mod.firstium_ore": "Firstium Ore",
+  "block.practice_mod.firstium_block": "Firstium Block",
+  "block.practice_mod.deepslate_firstium_ore": "Deepslate Firstium Ore",
+  "block.practice_mod.assembler": "Assembler Machine",
+
+  "container.practice_mod.assembly": "Assembly",
+
+  "stat.practice_mod.interact_with_assembler_block": "Times interacted with Assembler",
+
+  "item.practice_mod.diceitem.tooltip": "Shift for more info",
+  "item.practice_mod.diceitem.extended_tooltip": "This is an extended tooltip lmao",
+
+  "itemGroup.practice_mod.practice_mod_group": "Practice Mod"
+}
