@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "lit=true": { "model": "practice_mod:block/lamp_lit" },
+    "lit=false": { "model": "practice_mod:block/lamp_unlit" }
+  }
+}
