@@ -4,9 +4,11 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.hikaru.practice_mod.PracticeMod;
 import net.hikaru.practice_mod.block.custom.AssemblerBlock;
+import net.hikaru.practice_mod.block.custom.EggplantCropBlock;
 import net.hikaru.practice_mod.block.custom.LampBlock;
 import net.hikaru.practice_mod.item.ModItemGroup;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.block.OreBlock;
 import net.minecraft.item.BlockItem;
@@ -36,8 +38,15 @@ public class ModBlocks {
             new AssemblerBlock(FabricBlockSettings.of(Material.REDSTONE_LAMP).strength(4.0f)
                     .requiresTool()), ModItemGroup.PRACTICE_MOD);
 
+    public static final Block EGGPLANT_CROP = registerBlockWithoutItem("eggplant_crop",
+            new EggplantCropBlock(FabricBlockSettings.copy(Blocks.WHEAT)));
+
     private static Block registerBlock(String name, Block block, ItemGroup tab) {
         registerBlockItem(name, block, tab);
+        return Registry.register(Registry.BLOCK, new Identifier(PracticeMod.MOD_ID, name), block);
+    }
+
+    private static Block registerBlockWithoutItem(String name, Block block) {
         return Registry.register(Registry.BLOCK, new Identifier(PracticeMod.MOD_ID, name), block);
     }
 

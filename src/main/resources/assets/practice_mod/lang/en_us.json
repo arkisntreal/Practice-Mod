@@ -4,12 +4,15 @@
   "item.practice_mod.first_core": "First Core",
   "item.practice_mod.d_four": "D4",
   "item.practice_mod.d_six": "D6",
+  "item.practice_mod.eggplant": "Eggplant",
+  "item.practice_mod.eggplant_seeds": "Eggplant Seeds",
 
   "block.practice_mod.firstium_ore": "Firstium Ore",
   "block.practice_mod.firstium_block": "Firstium Block",
   "block.practice_mod.deepslate_firstium_ore": "Deepslate Firstium Ore",
   "block.practice_mod.assembler": "Assembler Machine",
   "block.practice_mod.lamp": "Lamp",
+  "block.practice_mod.eggplant_crop": "Eggplant Crop",
 
   "container.practice_mod.assembly": "Assembly",
 
