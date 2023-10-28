@@ -47,7 +47,11 @@ public class DiceItem extends Item {
     }
 
     private void outputDiceNumber(PlayerEntity player) {
-        player.sendMessage(Text.literal("You rolled a " + getDiceNumber(diceSides)));
+        player.sendMessage(Text.literal("You rolled a")
+                .formatted(Formatting.WHITE)
+                .append(Text.literal(" " + getDiceNumber(diceSides))
+                        .formatted(Formatting.GOLD))
+        );
     }
 
     private int getDiceNumber(int n) {
