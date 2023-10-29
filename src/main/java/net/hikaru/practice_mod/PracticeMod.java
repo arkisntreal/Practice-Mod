@@ -2,6 +2,8 @@ package net.hikaru.practice_mod;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.hikaru.practice_mod.event.PlayerTickHandler;
 import net.hikaru.practice_mod.item.ModItems;
 import net.hikaru.practice_mod.block.ModBlocks;
 import net.hikaru.practice_mod.networking.ModMessages;
@@ -40,12 +42,17 @@ public class PracticeMod implements ModInitializer {
 
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		ModPaintings.registerPaintings();
+
 		ModVillagers.registerVillagers();
 		ModVillagers.registerTrades();
-		ModPaintings.registerPaintings();
+
+
 		ModLootTableModifiers.modifyLootTables();
 		ModOreGeneration.generateOres();
 
 		ModMessages.registerC2SPackets();
+
+		ServerTickEvents.START_SERVER_TICK.register(new PlayerTickHandler());
 	}
 }

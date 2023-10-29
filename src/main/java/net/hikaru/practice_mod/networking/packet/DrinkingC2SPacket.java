@@ -1,6 +1,8 @@
 package net.hikaru.practice_mod.networking.packet;
 
 import net.fabricmc.fabric.api.networking.v1.PacketSender;
+import net.hikaru.practice_mod.util.IEntityDataSaver;
+import net.hikaru.practice_mod.util.ThirstData;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
@@ -28,15 +30,27 @@ public class DrinkingC2SPacket {
             // Notify player
             player.sendMessage(Text.translatable(MESSAGE_DRINKING_WATER)
                     .fillStyle(Style.EMPTY.withColor(194009)), false);
+
             // Play drinking sound
             world.playSound(null, player.getBlockPos(), SoundEvents.ENTITY_GENERIC_DRINK, SoundCategory.PLAYERS,
                     0.5f, world.random.nextFloat() * 0.1f + 0.9f);
-            // Output how much thirst player has
+
             // Actually add the water level to the player :)
+            ThirstData.addThirst(((IEntityDataSaver) player), 1);
+
+            // Output water level to player
+            player.sendMessage(Text.literal("Thirst lvl: " + ((IEntityDataSaver) player).getPersistentData()
+                            .getInt("thirst"))
+                            .fillStyle(Style.EMPTY.withColor(194009)), false);
         } else {
             // Failed, sad
             player.sendMessage(Text.translatable(MESSAGE_NO_WATER_NEARBY)
                     .fillStyle(Style.EMPTY.withColor(15660391)), false);
+
+            // Output water level to player
+            player.sendMessage(Text.literal("Thirst lvl: " + ((IEntityDataSaver) player).getPersistentData()
+                            .getInt("thirst"))
+                            .fillStyle(Style.EMPTY.withColor(194009)), false);
         }
     }
 
