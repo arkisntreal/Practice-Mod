@@ -23,5 +23,8 @@
 
   "itemGroup.practice_mod.practice_mod_group": "Practice Mod",
 
-  "entity.minecraft.villager.assembly_master": "Assembly Master"
+  "entity.minecraft.villager.assembly_master": "Assembly Master",
+
+  "key.practice_mod.category.tutorial": "Practice Mod",
+  "key.practice_mod.drink.water": "Drink Water Key"
 }
