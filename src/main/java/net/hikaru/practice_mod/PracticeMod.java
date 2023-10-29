@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 
 import net.hikaru.practice_mod.item.ModItems;
 import net.hikaru.practice_mod.block.ModBlocks;
+import net.hikaru.practice_mod.networking.ModMessages;
 import net.hikaru.practice_mod.painting.ModPaintings;
 import net.hikaru.practice_mod.util.ModLootTableModifiers;
 import net.hikaru.practice_mod.villager.ModVillagers;
@@ -35,19 +36,16 @@ public class PracticeMod implements ModInitializer {
 
 		Registry.register(Registry.CUSTOM_STAT, "interact_with_assembler_block", INTERACT_WITH_ASSEMBLER_BLOCK);
 		Stats.CUSTOM.getOrCreateStat(INTERACT_WITH_ASSEMBLER_BLOCK, StatFormatter.DEFAULT);
-
 		LOGGER.info("Hi Fabric!");
 
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
-
 		ModVillagers.registerVillagers();
 		ModVillagers.registerTrades();
-
 		ModPaintings.registerPaintings();
-
 		ModLootTableModifiers.modifyLootTables();
-
 		ModOreGeneration.generateOres();
+
+		ModMessages.registerC2SPackets();
 	}
 }

@@ -26,5 +26,8 @@
   "entity.minecraft.villager.assembly_master": "Assembly Master",
 
   "key.practice_mod.category.tutorial": "Practice Mod",
-  "key.practice_mod.drink.water": "Drink Water Key"
+  "key.practice_mod.drink.water": "Drink Water Key",
+
+  "message.practice_mod.drank_water": "Drank water!",
+  "message.practice_mod.no_water": "No water within range!"
 }
