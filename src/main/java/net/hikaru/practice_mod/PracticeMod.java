@@ -4,6 +4,8 @@ import net.fabricmc.api.ModInitializer;
 
 import net.hikaru.practice_mod.item.ModItems;
 import net.hikaru.practice_mod.block.ModBlocks;
+import net.hikaru.practice_mod.painting.ModPaintings;
+import net.hikaru.practice_mod.villager.ModVillagers;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.stat.StatFormatter;
 import net.minecraft.stat.Stats;
@@ -33,5 +35,8 @@ public class PracticeMod implements ModInitializer {
 
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+
+		ModVillagers.registerVillagers();
+		ModVillagers.registerTrades();
 	}
 }

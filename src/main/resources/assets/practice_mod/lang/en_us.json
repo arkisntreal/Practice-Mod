@@ -21,5 +21,7 @@
   "item.practice_mod.diceitem.tooltip": "Shift for more info",
   "item.practice_mod.diceitem.extended_tooltip": "This is an extended tooltip lmao",
 
-  "itemGroup.practice_mod.practice_mod_group": "Practice Mod"
+  "itemGroup.practice_mod.practice_mod_group": "Practice Mod",
+
+  "entity.minecraft.villager.assembly_master": "Assembly Master"
 }
