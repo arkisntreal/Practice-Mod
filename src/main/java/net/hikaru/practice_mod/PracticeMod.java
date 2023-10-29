@@ -38,5 +38,7 @@ public class PracticeMod implements ModInitializer {
 
 		ModVillagers.registerVillagers();
 		ModVillagers.registerTrades();
+
+		ModPaintings.registerPaintings();
 	}
 }
