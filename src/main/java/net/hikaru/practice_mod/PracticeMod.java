@@ -5,7 +5,10 @@ import net.fabricmc.api.ModInitializer;
 import net.hikaru.practice_mod.item.ModItems;
 import net.hikaru.practice_mod.block.ModBlocks;
 import net.hikaru.practice_mod.painting.ModPaintings;
+import net.hikaru.practice_mod.util.ModLootTableModifiers;
 import net.hikaru.practice_mod.villager.ModVillagers;
+import net.hikaru.practice_mod.world.feature.ModConfiguredFeatures;
+import net.hikaru.practice_mod.world.gen.ModOreGeneration;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.stat.StatFormatter;
 import net.minecraft.stat.Stats;
@@ -28,6 +31,8 @@ public class PracticeMod implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
+		ModConfiguredFeatures.registerConfiguredFeatures();
+
 		Registry.register(Registry.CUSTOM_STAT, "interact_with_assembler_block", INTERACT_WITH_ASSEMBLER_BLOCK);
 		Stats.CUSTOM.getOrCreateStat(INTERACT_WITH_ASSEMBLER_BLOCK, StatFormatter.DEFAULT);
 
@@ -40,5 +45,7 @@ public class PracticeMod implements ModInitializer {
 		ModVillagers.registerTrades();
 
 		ModPaintings.registerPaintings();
+
+		ModOreGeneration.generateOres();
 	}
 }
