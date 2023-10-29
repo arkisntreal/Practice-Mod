@@ -46,6 +46,8 @@ public class PracticeMod implements ModInitializer {
 
 		ModPaintings.registerPaintings();
 
+		ModLootTableModifiers.modifyLootTables();
+
 		ModOreGeneration.generateOres();
 	}
 }
