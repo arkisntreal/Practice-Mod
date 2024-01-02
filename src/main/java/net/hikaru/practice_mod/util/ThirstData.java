@@ -1,6 +1,11 @@
 package net.hikaru.practice_mod.util;
 
+import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.hikaru.practice_mod.networking.ModMessages;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.network.PacketByteBuf;
+import net.minecraft.server.network.ServerPlayerEntity;
 
 public class ThirstData {
     public static int addThirst(IEntityDataSaver player, int amount) {
@@ -14,7 +19,7 @@ public class ThirstData {
 
         nbt.putInt("thirst", thirst);
 
-        // Sync the data here
+        syncThirst(thirst, (ServerPlayerEntity) player);
 
         return thirst;
     }
@@ -30,8 +35,14 @@ public class ThirstData {
 
         nbt.putInt("thirst", thirst);
 
-        // Sync the data here
+        syncThirst(thirst, (ServerPlayerEntity) player);
 
         return thirst;
+    }
+
+    public static void syncThirst(int thirst, ServerPlayerEntity player) {
+        PacketByteBuf buffer = PacketByteBufs.create();
+        buffer.writeInt(thirst);
+        ServerPlayNetworking.send(player, ModMessages.THIRST_SYNC_ID, buffer);
     }
 }

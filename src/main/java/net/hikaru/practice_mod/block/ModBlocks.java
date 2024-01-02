@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.hikaru.practice_mod.PracticeMod;
 import net.hikaru.practice_mod.block.custom.AssemblerBlock;
 import net.hikaru.practice_mod.block.custom.EggplantCropBlock;
+import net.hikaru.practice_mod.block.custom.FancyCraftingTableBlock;
 import net.hikaru.practice_mod.block.custom.LampBlock;
 import net.hikaru.practice_mod.item.ModItemGroup;
 import net.minecraft.block.Block;
@@ -31,12 +32,16 @@ public class ModBlocks {
                     .requiresTool(), UniformIntProvider.create(5, 8)), ModItemGroup.PRACTICE_MOD);
 
     public static final Block LAMP = registerBlock("lamp",
-            new LampBlock(FabricBlockSettings.of(Material.REDSTONE_LAMP).strength(4f)
+            new LampBlock(FabricBlockSettings.of(Material.REDSTONE_LAMP).strength(4.0f)
                     .luminance(state -> state.get(LampBlock.LIT) ? 15 : 0)
                     .requiresTool()), ModItemGroup.PRACTICE_MOD);
     public static final Block ASSEMBLER = registerBlock("assembler",
             new AssemblerBlock(FabricBlockSettings.of(Material.REDSTONE_LAMP).strength(4.0f)
                     .requiresTool()), ModItemGroup.PRACTICE_MOD);
+    public static final Block FANCY_CRAFTING_TABLE = registerBlock("fancy_crafting_table",
+            new FancyCraftingTableBlock(FabricBlockSettings.of(Material.WOOD).strength(4.0f)
+                    .requiresTool()
+                    .nonOpaque()), ModItemGroup.PRACTICE_MOD);
 
     public static final Block EGGPLANT_CROP = registerBlockWithoutItem("eggplant_crop",
             new EggplantCropBlock(FabricBlockSettings.copy(Blocks.WHEAT)));

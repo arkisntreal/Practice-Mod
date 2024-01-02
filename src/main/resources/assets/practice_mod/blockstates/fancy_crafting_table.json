@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "facing=north": { "model": "practice_mod:block/fancy_crafting_table" },
+    "facing=east": { "model": "practice_mod:block/fancy_crafting_table",
+      "y": 90
+    },
+    "facing=south": { "model": "practice_mod:block/fancy_crafting_table",
+      "y": 180
+    },
+    "facing=west": { "model": "practice_mod:block/fancy_crafting_table",
+      "y": 270
+    }
+  }
+}

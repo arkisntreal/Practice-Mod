@@ -51,6 +51,9 @@ public class DrinkingC2SPacket {
             player.sendMessage(Text.literal("Thirst lvl: " + ((IEntityDataSaver) player).getPersistentData()
                             .getInt("thirst"))
                             .fillStyle(Style.EMPTY.withColor(194009)), false);
+
+            // Sync thirst
+            ThirstData.syncThirst(((IEntityDataSaver) player).getPersistentData().getInt("thirst"), player);
         }
     }
 

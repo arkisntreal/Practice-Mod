@@ -3,11 +3,15 @@ package net.hikaru.practice_mod;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.hikaru.practice_mod.block.entity.ModBlockEntities;
 import net.hikaru.practice_mod.event.PlayerTickHandler;
+import net.hikaru.practice_mod.fluid.ModFluids;
 import net.hikaru.practice_mod.item.ModItems;
 import net.hikaru.practice_mod.block.ModBlocks;
 import net.hikaru.practice_mod.networking.ModMessages;
 import net.hikaru.practice_mod.painting.ModPaintings;
+import net.hikaru.practice_mod.recipe.ModRecipes;
+import net.hikaru.practice_mod.screen.ModScreenHandlers;
 import net.hikaru.practice_mod.util.ModLootTableModifiers;
 import net.hikaru.practice_mod.villager.ModVillagers;
 import net.hikaru.practice_mod.world.feature.ModConfiguredFeatures;
@@ -42,11 +46,11 @@ public class PracticeMod implements ModInitializer {
 
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		ModFluids.registerModFluids();
 		ModPaintings.registerPaintings();
 
 		ModVillagers.registerVillagers();
 		ModVillagers.registerTrades();
-
 
 		ModLootTableModifiers.modifyLootTables();
 		ModOreGeneration.generateOres();
@@ -54,5 +58,10 @@ public class PracticeMod implements ModInitializer {
 		ModMessages.registerC2SPackets();
 
 		ServerTickEvents.START_SERVER_TICK.register(new PlayerTickHandler());
+
+		ModBlockEntities.registerBlockEntities();
+		ModScreenHandlers.registerAllScreenHandlers();
+
+		ModRecipes.registerModRecipes();
 	}
 }

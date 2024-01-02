@@ -4,9 +4,7 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.hikaru.practice_mod.PracticeMod;
 import net.hikaru.practice_mod.block.ModBlocks;
 import net.hikaru.practice_mod.item.custom.DiceItem;
-import net.minecraft.item.AliasedBlockItem;
-import net.minecraft.item.FoodComponent;
-import net.minecraft.item.Item;
+import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -22,6 +20,10 @@ public class ModItems {
             new DiceItem(new FabricItemSettings().group(ModItemGroup.PRACTICE_MOD).maxCount(1), 4));
     public static final Item D_SIX = registerItem("d_six",
             new DiceItem(new FabricItemSettings().group(ModItemGroup.PRACTICE_MOD).maxCount(1), 6));
+
+    public static final Item FRUITY_SWORD = registerItem("fruity_sword",
+            new SwordItem(ToolMaterials.DIAMOND, 9, 2.5f,
+                    new FabricItemSettings().group(ModItemGroup.PRACTICE_MOD).maxCount(1)));
 
     public static final Item EGGPLANT_SEEDS = registerItem("eggplant_seeds",
             new AliasedBlockItem(ModBlocks.EGGPLANT_CROP,

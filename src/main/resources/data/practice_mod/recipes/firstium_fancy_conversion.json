@@ -1,0 +1,13 @@
+{
+  "type": "practice_mod:fancy_recipe",
+  "ingredients": [
+    {
+      "item": "practice_mod:raw_firstium"
+    }
+  ],
+  "output": [
+    {
+      "item": "practice_mod:firstium_ingot"
+    }
+  ]
+}

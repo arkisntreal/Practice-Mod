@@ -1,9 +1,11 @@
 package net.hikaru.practice_mod.networking;
 
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.hikaru.practice_mod.PracticeMod;
 import net.hikaru.practice_mod.networking.packet.DrinkingC2SPacket;
 import net.hikaru.practice_mod.networking.packet.ExampleC2SPacket;
+import net.hikaru.practice_mod.networking.packet.ThirstSyncDataS2CPacket;
 import net.minecraft.util.Identifier;
 
 public class ModMessages {
@@ -17,6 +19,6 @@ public class ModMessages {
     }
 
     public static void registerS2CPackets() {
-
+        ClientPlayNetworking.registerGlobalReceiver(THIRST_SYNC_ID, ThirstSyncDataS2CPacket::receive);
     }
 }
