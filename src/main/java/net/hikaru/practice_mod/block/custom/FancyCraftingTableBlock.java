@@ -1,5 +1,6 @@
 package net.hikaru.practice_mod.block.custom;
 
+import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.hikaru.practice_mod.block.entity.FancyCraftingBlockEntity;
 import net.hikaru.practice_mod.block.entity.ModBlockEntities;
 import net.minecraft.block.*;
@@ -7,11 +8,16 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.NamedScreenHandlerFactory;
+import net.minecraft.screen.ScreenHandler;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.text.Text;
 import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -27,7 +33,7 @@ public class FancyCraftingTableBlock extends BlockWithEntity implements BlockEnt
         super(settings);
     }
 
-    private static VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 10, 16);
+    private static VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 16, 16);
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
@@ -79,7 +85,7 @@ public class FancyCraftingTableBlock extends BlockWithEntity implements BlockEnt
     public ActionResult onUse(BlockState state, World world, BlockPos pos,
                               PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (!world.isClient) {
-            NamedScreenHandlerFactory screenHandlerFactory = state.createScreenHandlerFactory(world, pos);
+            NamedScreenHandlerFactory screenHandlerFactory = (FancyCraftingBlockEntity) world.getBlockEntity(pos);
 
             if (screenHandlerFactory != null) {
                 player.openHandledScreen(screenHandlerFactory);

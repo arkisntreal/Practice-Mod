@@ -64,18 +64,19 @@ public class FancyRecipe implements Recipe<SimpleInventory> {
     public static class Type implements RecipeType<FancyRecipe> {
         private Type() { }
         public static final Type INSTANCE = new Type();
-        public static final String ID = "fancy_recipe";
+        public static final String ID = "fancy_conversion";
     }
 
     public static class Serializer implements RecipeSerializer<FancyRecipe> {
         public static final Serializer INSTANCE = new Serializer();
-        public static final String ID = "fancy_recipe";
+        public static final String ID = "fancy_conversion";
 
         @Override
         public FancyRecipe read(Identifier id, JsonObject json) {
             ItemStack output = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "output"));
 
             JsonArray ingredients = JsonHelper.getArray(json, "ingredients");
+
             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(1, Ingredient.EMPTY);
 
             for (int i = 0; i < inputs.size(); i++) {

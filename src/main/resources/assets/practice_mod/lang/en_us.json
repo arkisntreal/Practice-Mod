@@ -1,4 +1,6 @@
 {
+  "block.minecraft.empty": "Empty",
+
   "item.practice_mod.raw_firstium": "Raw Firstium",
   "item.practice_mod.firstium_ingot": "Firstium Ingot",
   "item.practice_mod.first_core": "First Core",
@@ -16,6 +18,8 @@
   "block.practice_mod.lamp": "Lamp",
   "block.practice_mod.eggplant_crop": "Eggplant Crop",
   "block.practice_mod.fancy_crafting_table": "Fancy Crafting Table",
+  "block.practice_mod.soap_water": "Soap Water",
+  "block.practice_mod.soap_water_block": "Soap Water",
 
   "container.practice_mod.assembly": "Assembly",
 
@@ -32,5 +36,8 @@
   "key.practice_mod.drink.water": "Drink Water Key",
 
   "message.practice_mod.drank_water": "Drank water!",
-  "message.practice_mod.no_water": "No water within range!"
+  "message.practice_mod.no_water": "No water within range!",
+
+  "practice_mod.tooltip.liquid.amount.with.capacity": "%s / %s mB",
+  "practice_mod.tooltip.liquid.amount": "%s mB"
 }
