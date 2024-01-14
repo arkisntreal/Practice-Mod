@@ -15,6 +15,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -55,6 +56,8 @@ public class ChomperEntity extends HostileEntity implements IAnimatable {
     public void registerControllers(AnimationData animationData) {
         animationData.addAnimationController(new AnimationController(this, "controller",
                 0, this::predicate));
+        animationData.addAnimationController(new AnimationController(this, "attackController",
+                0, this::attackPredicate));
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent animationEvent) {
@@ -64,6 +67,16 @@ public class ChomperEntity extends HostileEntity implements IAnimatable {
         }
 
         animationEvent.getController().setAnimation(new AnimationBuilder().loop("animation.chomper.idle"));
+        return PlayState.CONTINUE;
+    }
+
+    private PlayState attackPredicate(AnimationEvent animationEvent) {
+        if (this.handSwinging && animationEvent.getController().getAnimationState().equals(AnimationState.Stopped)) {
+            animationEvent.getController().markNeedsReload();
+            animationEvent.getController().setAnimation(new AnimationBuilder().addAnimation("animation.chomper.attack"));
+            this.handSwinging = false;
+        }
+
         return PlayState.CONTINUE;
     }
 
