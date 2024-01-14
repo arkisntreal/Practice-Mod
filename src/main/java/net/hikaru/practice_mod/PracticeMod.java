@@ -2,11 +2,14 @@ package net.hikaru.practice_mod;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.hikaru.practice_mod.block.entity.ModBlockEntities;
+import net.hikaru.practice_mod.command.ModCommands;
 import net.hikaru.practice_mod.entity.ModEntities;
 import net.hikaru.practice_mod.entity.custom.ChomperEntity;
+import net.hikaru.practice_mod.event.ModPlayerEventCopyFrom;
 import net.hikaru.practice_mod.event.PlayerTickHandler;
 import net.hikaru.practice_mod.fluid.ModFluids;
 import net.hikaru.practice_mod.item.ModItems;
@@ -70,5 +73,8 @@ public class PracticeMod implements ModInitializer {
 
 		FabricDefaultAttributeRegistry.register(ModEntities.CHOMPER, ChomperEntity.setAttributes());
 		GeckoLib.initialize();
+
+		ModCommands.registerCommands();
+		ServerPlayerEvents.COPY_FROM.register(new ModPlayerEventCopyFrom());
 	}
 }

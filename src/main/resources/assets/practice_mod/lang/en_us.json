@@ -39,5 +39,11 @@
   "message.practice_mod.no_water": "No water within range!",
 
   "practice_mod.tooltip.liquid.amount.with.capacity": "%s / %s mB",
-  "practice_mod.tooltip.liquid.amount": "%s mB"
+  "practice_mod.tooltip.liquid.amount": "%s mB",
+
+  "entity.practice_mod.chomper": "Chomper",
+
+  "command.home.feedback": "This your feedback",
+  "command.home.negative": "You failure",
+  "command.home.sethome": "Home set successfully to %s"
 }
