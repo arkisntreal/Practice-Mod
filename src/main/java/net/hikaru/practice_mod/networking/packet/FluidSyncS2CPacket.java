@@ -17,7 +17,7 @@ public class FluidSyncS2CPacket {
         long fluidLevel = buf.readLong();
         BlockPos position = buf.readBlockPos();
 
-        if (client.world.getBlockEntity(position) instanceof FancyCraftingBlockEntity blockEntity) {
+        if (client.world != null && client.world.getBlockEntity(position) instanceof FancyCraftingBlockEntity blockEntity) {
             blockEntity.setFluidLevel(variant, fluidLevel);
 
             if (client.player.currentScreenHandler instanceof FancyCraftingScreenHandler screenHandler &&

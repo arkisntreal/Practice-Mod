@@ -3,7 +3,10 @@ package net.hikaru.practice_mod;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.hikaru.practice_mod.block.entity.ModBlockEntities;
+import net.hikaru.practice_mod.entity.ModEntities;
+import net.hikaru.practice_mod.entity.custom.ChomperEntity;
 import net.hikaru.practice_mod.event.PlayerTickHandler;
 import net.hikaru.practice_mod.fluid.ModFluids;
 import net.hikaru.practice_mod.item.ModItems;
@@ -23,6 +26,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import software.bernie.geckolib3.GeckoLib;
 
 public class PracticeMod implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
@@ -63,5 +67,8 @@ public class PracticeMod implements ModInitializer {
 		ModScreenHandlers.registerAllScreenHandlers();
 
 		ModRecipes.registerModRecipes();
+
+		FabricDefaultAttributeRegistry.register(ModEntities.CHOMPER, ChomperEntity.setAttributes());
+		GeckoLib.initialize();
 	}
 }

@@ -23,6 +23,11 @@ repositories {
 			includeGroup "curse.maven"
 		}
 	}
+
+	maven {
+		name = 'GeckoLib'
+		url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+	}
 }
 
 dependencies {
@@ -40,6 +45,8 @@ dependencies {
 
 	modImplementation("curse.maven:reborncore-237903:4102771")
 	modImplementation("curse.maven:techreborn-233564:4102770")
+
+	modImplementation 'software.bernie.geckolib:geckolib-fabric-1.19:3.1.40'
 
 	//modImplementation("curse.maven:cobblemon-687131:4468330")
 

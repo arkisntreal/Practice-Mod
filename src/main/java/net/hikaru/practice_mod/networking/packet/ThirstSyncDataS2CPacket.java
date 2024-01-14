@@ -9,6 +9,8 @@ import net.minecraft.network.PacketByteBuf;
 public class ThirstSyncDataS2CPacket {
     public static void receive(MinecraftClient client, ClientPlayNetworkHandler handler,
                                PacketByteBuf buf, PacketSender responseSender) {
-        ((IEntityDataSaver) client.player).getPersistentData().putInt("thirst", buf.readInt());
+        if (client.player != null) {
+            ((IEntityDataSaver) client.player).getPersistentData().putInt("thirst", buf.readInt());
+        }
     }
 }

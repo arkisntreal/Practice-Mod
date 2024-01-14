@@ -4,8 +4,14 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
+import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.hikaru.practice_mod.block.ModBlocks;
+import net.hikaru.practice_mod.block.entity.ModBlockEntities;
+import net.hikaru.practice_mod.block.entity.client.FancyCraftingBlockEntityRenderer;
+import net.hikaru.practice_mod.entity.ModEntities;
+import net.hikaru.practice_mod.entity.client.ChomperRenderer;
 import net.hikaru.practice_mod.event.KeyInputHandler;
 import net.hikaru.practice_mod.fluid.ModFluids;
 import net.hikaru.practice_mod.networking.ModMessages;
@@ -38,5 +44,9 @@ public class PracticeModClient implements ClientModInitializer {
                 ModFluids.STILL_SOAP_WATER, ModFluids.FLOWING_SOAP_WATER);
 
         HandledScreens.register(ModScreenHandlers.FANCY_CRAFTING_SCREEN_HANDLER, FancyCraftingScreen::new);
+
+        BlockEntityRendererRegistry.register(ModBlockEntities.FANCY_CRAFTING_TABLE, FancyCraftingBlockEntityRenderer::new);
+
+        EntityRendererRegistry.register(ModEntities.CHOMPER, ChomperRenderer::new);
     }
 }
