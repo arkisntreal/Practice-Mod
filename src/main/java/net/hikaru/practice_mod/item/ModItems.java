@@ -22,7 +22,10 @@ public class ModItems {
             new DiceItem(new FabricItemSettings().group(ModItemGroup.PRACTICE_MOD).maxCount(1), 6));
 
     public static final Item FRUITY_SWORD = registerItem("fruity_sword",
-            new SwordItem(ToolMaterials.DIAMOND, 9, 2.5f,
+            new SwordItem(ToolMaterials.DIAMOND, 9, 2.5F,
+                    new FabricItemSettings().group(ModItemGroup.PRACTICE_MOD).maxCount(1)));
+    public static final Item FIRSTIUM_PICKAXE = registerItem("firstium_pickaxe",
+            new PickaxeItem(ModToolMaterial.FIRSTIUM, 5, 2F,
                     new FabricItemSettings().group(ModItemGroup.PRACTICE_MOD).maxCount(1)));
 
     public static final Item EGGPLANT_SEEDS = registerItem("eggplant_seeds",
@@ -30,7 +33,7 @@ public class ModItems {
                     new FabricItemSettings().group(ModItemGroup.PRACTICE_MOD)));
     public static final Item EGGPLANT = registerItem("eggplant",
             new Item(new FabricItemSettings().group(ModItemGroup.PRACTICE_MOD)
-                    .food(new FoodComponent.Builder().hunger(3).saturationModifier(5f).build())));
+                    .food(new FoodComponent.Builder().hunger(3).saturationModifier(5F).build())));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registry.ITEM, new Identifier(PracticeMod.MOD_ID, name), item);
