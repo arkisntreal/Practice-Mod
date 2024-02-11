@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "practice_mod:block/dogwood_log_top",
+    "side": "practice_mod:block/dogwood_log_log"
+  }
+}

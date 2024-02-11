@@ -20,10 +20,13 @@ import net.hikaru.practice_mod.networking.ModMessages;
 import net.hikaru.practice_mod.painting.ModPaintings;
 import net.hikaru.practice_mod.recipe.ModRecipes;
 import net.hikaru.practice_mod.screen.ModScreenHandlers;
+import net.hikaru.practice_mod.util.ModFlammableBlocks;
 import net.hikaru.practice_mod.util.ModLootTableModifiers;
+import net.hikaru.practice_mod.util.ModStrippableBlocks;
 import net.hikaru.practice_mod.villager.ModVillagers;
 import net.hikaru.practice_mod.world.feature.ModConfiguredFeatures;
 import net.hikaru.practice_mod.world.gen.ModOreGeneration;
+import net.hikaru.practice_mod.world.gen.ModWorldGen;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.stat.StatFormatter;
 import net.minecraft.stat.Stats;
@@ -62,7 +65,8 @@ public class PracticeMod implements ModInitializer {
 		ModVillagers.registerTrades();
 
 		ModLootTableModifiers.modifyLootTables();
-		ModOreGeneration.generateOres();
+
+		ModWorldGen.generateWorldGen();
 
 		ModMessages.registerC2SPackets();
 
@@ -80,5 +84,8 @@ public class PracticeMod implements ModInitializer {
 		ServerPlayerEvents.COPY_FROM.register(new ModPlayerEventCopyFrom());
 
 		AttackEntityCallback.EVENT.register(new AttackEntityHandler());
+
+		ModFlammableBlocks.registerFlammableBlocks();
+		ModStrippableBlocks.registerStrippables();
 	}
 }

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "practice_mod:block/stripped_dogwood_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "practice_mod:block/stripped_dogwood_wood"
+    },
+    "axis=z": {
+      "model": "practice_mod:block/stripped_dogwood_wood",
+      "x": 90
+    }
+  }
+}

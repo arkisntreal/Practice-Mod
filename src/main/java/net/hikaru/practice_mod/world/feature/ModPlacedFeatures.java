@@ -4,6 +4,7 @@ import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.feature.PlacedFeature;
 import net.minecraft.world.gen.feature.PlacedFeatures;
+import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 import net.minecraft.world.gen.placementmodifier.*;
 
 import java.util.List;
@@ -24,4 +25,8 @@ public class ModPlacedFeatures {
     private static List<PlacementModifier> modifiersWithRarity(int chance, PlacementModifier heightModifier) {
         return modifiers(RarityFilterPlacementModifier.of(chance), heightModifier);
     }
+
+    public static final RegistryEntry<PlacedFeature> DOGWOOD_PLACED = PlacedFeatures.register("dogwood_placed",
+            ModConfiguredFeatures.DOGWOOD_SPAWN,
+            VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1F, 2)));
 }

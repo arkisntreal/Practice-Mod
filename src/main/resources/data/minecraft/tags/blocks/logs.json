@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "practice_mod:dogwood_log",
+    "practice_mod:dogwood_wood",
+    "practice_mod:stripped_dogwood_log",
+    "practice_mod:stripped_dogwood_wood"
+  ]
+}

@@ -8,10 +8,9 @@ import net.hikaru.practice_mod.block.custom.EggplantCropBlock;
 import net.hikaru.practice_mod.block.custom.FancyCraftingTableBlock;
 import net.hikaru.practice_mod.block.custom.LampBlock;
 import net.hikaru.practice_mod.item.ModItemGroup;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.Material;
-import net.minecraft.block.OreBlock;
+import net.hikaru.practice_mod.world.feature.tree.DogwoodSaplingGenerator;
+import net.minecraft.block.*;
+import net.minecraft.block.sapling.SaplingGenerator;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -45,6 +44,24 @@ public class ModBlocks {
 
     public static final Block EGGPLANT_CROP = registerBlockWithoutItem("eggplant_crop",
             new EggplantCropBlock(FabricBlockSettings.copy(Blocks.WHEAT)));
+
+    public static final Block DOGWOOD_WOOD = registerBlock("dogwood_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)), ModItemGroup.PRACTICE_MOD);
+    public static final Block DOGWOOD_LOG = registerBlock("dogwood_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)), ModItemGroup.PRACTICE_MOD);
+    public static final Block STRIPPED_DOGWOOD_WOOD = registerBlock("stripped_dogwood_wood",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)), ModItemGroup.PRACTICE_MOD);
+    public static final Block STRIPPED_DOGWOOD_LOG = registerBlock("stripped_dogwood_log",
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)), ModItemGroup.PRACTICE_MOD);
+
+    public static final Block DOGWOOD_PLANKS = registerBlock("dogwood_planks",
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)), ModItemGroup.PRACTICE_MOD);
+    public static final Block DOGWOOD_LEAVES = registerBlock("dogwood_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)), ModItemGroup.PRACTICE_MOD);
+
+    public static final Block DOGWOOD_SAPLING = registerBlock("dogwood_sapling",
+            new SaplingBlock(new DogwoodSaplingGenerator(),
+                    FabricBlockSettings.copy(Blocks.OAK_SAPLING)), ModItemGroup.PRACTICE_MOD);
 
     private static Block registerBlock(String name, Block block, ItemGroup tab) {
         registerBlockItem(name, block, tab);
