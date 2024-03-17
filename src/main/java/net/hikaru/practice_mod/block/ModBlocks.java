@@ -10,7 +10,7 @@ import net.hikaru.practice_mod.block.custom.LampBlock;
 import net.hikaru.practice_mod.item.ModItemGroup;
 import net.hikaru.practice_mod.world.feature.tree.DogwoodSaplingGenerator;
 import net.minecraft.block.*;
-import net.minecraft.block.sapling.SaplingGenerator;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -62,6 +62,12 @@ public class ModBlocks {
     public static final Block DOGWOOD_SAPLING = registerBlock("dogwood_sapling",
             new SaplingBlock(new DogwoodSaplingGenerator(),
                     FabricBlockSettings.copy(Blocks.OAK_SAPLING)), ModItemGroup.PRACTICE_MOD);
+
+    public static final Block BUTTERCUPS = registerBlock("buttercups",
+            new FlowerBlock(StatusEffects.HASTE, 8,
+                    FabricBlockSettings.copy(Blocks.DANDELION)), ModItemGroup.PRACTICE_MOD);
+    public static final Block POTTED_BUTTERCUPS = registerBlockWithoutItem("potted_buttercups",
+            new FlowerPotBlock(ModBlocks.BUTTERCUPS, FabricBlockSettings.copy(Blocks.POTTED_DANDELION)));
 
     private static Block registerBlock(String name, Block block, ItemGroup tab) {
         registerBlockItem(name, block, tab);

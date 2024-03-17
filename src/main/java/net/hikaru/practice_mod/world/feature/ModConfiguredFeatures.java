@@ -2,7 +2,6 @@ package net.hikaru.practice_mod.world.feature;
 
 import net.hikaru.practice_mod.PracticeMod;
 import net.hikaru.practice_mod.block.ModBlocks;
-import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
@@ -55,6 +54,11 @@ public class ModConfiguredFeatures {
                             true, UniformIntProvider.create(3, 8),
                             UniformIntProvider.create(2, 6), UniformIntProvider.create(1, 2),
                             -18, 18, 0.075D, 1));
+
+    public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> BUTTERCUPS =
+            ConfiguredFeatures.register("flower_buttercups", Feature.FLOWER,
+                    ConfiguredFeatures.createRandomPatchFeatureConfig(64, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BUTTERCUPS)))));
 
     public static void registerConfiguredFeatures() {
         PracticeMod.LOGGER.debug("Registering the ModConfiguredFeatures for " + PracticeMod.MOD_ID);

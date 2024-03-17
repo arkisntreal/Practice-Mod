@@ -25,7 +25,8 @@ import net.hikaru.practice_mod.util.ModLootTableModifiers;
 import net.hikaru.practice_mod.util.ModStrippableBlocks;
 import net.hikaru.practice_mod.villager.ModVillagers;
 import net.hikaru.practice_mod.world.feature.ModConfiguredFeatures;
-import net.hikaru.practice_mod.world.gen.ModOreGeneration;
+import net.hikaru.practice_mod.world.gen.ModEntitySpawn;
+import net.hikaru.practice_mod.world.gen.ModFlowerGeneration;
 import net.hikaru.practice_mod.world.gen.ModWorldGen;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.stat.StatFormatter;
@@ -87,5 +88,7 @@ public class PracticeMod implements ModInitializer {
 
 		ModFlammableBlocks.registerFlammableBlocks();
 		ModStrippableBlocks.registerStrippables();
+
+		ModFlowerGeneration.generateFlowers();
 	}
 }
