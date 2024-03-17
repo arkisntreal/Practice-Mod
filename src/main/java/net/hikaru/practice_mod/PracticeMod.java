@@ -90,5 +90,7 @@ public class PracticeMod implements ModInitializer {
 		ModStrippableBlocks.registerStrippables();
 
 		ModFlowerGeneration.generateFlowers();
+
+		ModEntitySpawn.addEntitySpawn();
 	}
 }
