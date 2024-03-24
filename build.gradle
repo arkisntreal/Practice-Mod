@@ -25,7 +25,15 @@ repositories {
 	}
 
 	maven {
-		name = 'GeckoLib'
+		name "Modrinth"
+		url "https://api.modrinth.com/maven"
+		content {
+			includeGroup("maven.modrinth")
+		}
+	}
+
+	maven {
+		name 'GeckoLib'
 		url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
 	}
 }
@@ -43,10 +51,13 @@ dependencies {
 		transitive = false
 	}
 
-	modImplementation("curse.maven:reborncore-237903:4102771")
-	modImplementation("curse.maven:techreborn-233564:4102770")
+	modImplementation "curse.maven:reborncore-237903:4102771"
+	modImplementation "curse.maven:techreborn-233564:4102770"
 
 	modImplementation 'software.bernie.geckolib:geckolib-fabric-1.19:3.1.40'
+
+	modImplementation "maven.modrinth:Wd844r7Q:1.19-01"
+	include("maven.modrinth:Wd844r7Q:1.19-01")
 
 	//modImplementation("curse.maven:cobblemon-687131:4468330")
 
@@ -55,6 +66,24 @@ dependencies {
 
 	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
 }
+
+def dataOutput = 'src/main/generated'
+
+loom {
+	runs {
+		datagen {
+			server()
+
+			name "Data Generation"
+			vmArg "-Dfabric-api.datagen"
+			vmArg "-Dfabric-api.datagen.output-dir=${file(dataOutput)}"
+
+			runDir "build/datagen"
+		}
+	}
+}
+
+sourceSets { main { resources { srcDirs += dataOutput } } }
 
 processResources {
 	inputs.property "version", project.version

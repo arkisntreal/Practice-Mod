@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "practice_mod:firstium_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "practice_mod:firstium_ingot"
+  }
+}

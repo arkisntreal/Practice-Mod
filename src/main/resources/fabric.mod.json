@@ -18,8 +18,11 @@
 		"main": [
           "net.hikaru.practice_mod.PracticeMod"
 		],
-		"client":[
+		"client": [
 			"net.hikaru.practice_mod.PracticeModClient"
+		],
+		"fabric-datagen": [
+			"net.hikaru.practice_mod.datagen.ModDataGeneration"
 		]
 	},
 	"mixins": [

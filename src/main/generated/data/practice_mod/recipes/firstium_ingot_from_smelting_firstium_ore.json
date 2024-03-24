@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 300,
+  "experience": 3.0,
+  "group": "firstium",
+  "ingredient": {
+    "item": "practice_mod:firstium_ore"
+  },
+  "result": "practice_mod:firstium_ingot"
+}

@@ -28,6 +28,7 @@ import net.hikaru.practice_mod.world.feature.ModConfiguredFeatures;
 import net.hikaru.practice_mod.world.gen.ModEntitySpawn;
 import net.hikaru.practice_mod.world.gen.ModFlowerGeneration;
 import net.hikaru.practice_mod.world.gen.ModWorldGen;
+import net.hikaru.practice_mod.world.village.VillageAdditions;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.stat.StatFormatter;
 import net.minecraft.stat.Stats;
@@ -92,5 +93,7 @@ public class PracticeMod implements ModInitializer {
 		ModFlowerGeneration.generateFlowers();
 
 		ModEntitySpawn.addEntitySpawn();
+
+		VillageAdditions.registerNewVillageStructures();
 	}
 }

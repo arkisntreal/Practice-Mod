@@ -1,17 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "firstium_block",
-  "pattern": [
-    "###",
-    "###",
-    "###"
-  ],
   "key": {
     "#": {
+      "item": "minecraft:white_wool"
+    },
+    "E": {
       "item": "practice_mod:firstium_ingot"
     }
   },
+  "pattern": [
+    "#EE",
+    "EE "
+  ],
   "result": {
-    "item": "practice_mod:firstium_block"
+    "item": "practice_mod:d_four"
   }
 }
